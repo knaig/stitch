@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Player</title>
+</head>
+<body>
+    <h1>Video Player</h1>
+    <video id="my-video" controls preload="auto" width="640" height="264">
+        <source src="trump_clip1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+
+    <input type="text" id="query" placeholder="Enter search query">
+    <button onclick="searchAndPlay()">Search and Play</button>  
+
+    <script>
+        async function searchAndPlay() {
+            const query = document.getElementById('query').value.trim();
+            if (!query) {
+                console.error('Search query is empty.');
+                return;
+            }
+
+            try {
+                console.log('Sending fetch request...');
+                const response = await fetch('http://localhost:5000/search', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.status}`);
+                }
+
+                const result = await response.json();                
+                const resultString = JSON.stringify(result, null, 2); // Convert result to string
+                console.log('Result as String:', resultString);
+
+                const resultJson = JSON.parse(resultString); // Parse the string back to JSON
+                console.log('Result JSON:', resultJson);
+
+                if (resultJson.documents && resultJson.documents.length > 0) {
+                    const content = resultJson.documents[0].content;
+
+                    const startTime = parseFloat(resultJson.start)
+                    console.log("start time =", startTime);
+
+                    if (!isNaN(startTime)) {
+                        const player = document.getElementById('my-video');
+                        player.currentTime = startTime;
+                        player.play().catch(function (error) {
+                            console.error('Error playing video:', error);
+                        });
+                    } else {
+                        console.error('Start time is not a valid number.');
+                    }
+                } else {
+                    console.error('No documents found.');
+                }
+            } catch (error) {
+                console.error(`Error searching for query "${query}":`, error);
+            }
+        }
+          
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "content": "        \"end\": 283.86,\n        \"probability\": 0.8380460739135742\n      },\n      {\n        \"word\": \" Vance\",\n        \"start\": 283.86,\n        \"end\": 284.4,\n        \"probability\": 0.9172606468200684\n      },\n      {\n        \"word\": \" about\",\n        \"start\": 284.4,\n        \"end\": 284.94,\n        \"probability\": 0.9213652014732361\n      },\n      {\n        \"word\": \" the\",\n        \"start\": 284.94,\n        \"end\": 285.16,\n        \"probability\": 0.9931926131248474\n      },\n      {\n        \"word\": \" assassination\",\n ",
+  "content_type": "text",
+  "score": 0.6430815959746047,
+  "meta": {},
+  "id_hash_keys": [
+    "content"
+  ],
+  "embedding": null,
+  "id": "665f4035f14ebbba9207dd63602c17f8"
+}

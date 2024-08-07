@@ -1,0 +1,1470 @@
+[
+  {
+    "id": 0,
+    "seek": 0,
+    "start": 0.6799999999999999,
+    "end": 4.66,
+    "text": " Peak Search Demonstration for Dr. Lard and Ayurprana.",
+    "tokens": [
+      50364,
+      43604,
+      17180,
+      4686,
+      4068,
+      2405,
+      337,
+      2491,
+      13,
+      441,
+      515,
+      293,
+      286,
+      404,
+      81,
+      2095,
+      13,
+      50714
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.2690425083555024,
+    "compression_ratio": 1.6059113300492611,
+    "no_speech_prob": 0.06718514859676361,
+    "words": [
+      {
+        "word": " Peak",
+        "start": 0.6799999999999999,
+        "end": 1.28,
+        "probability": 0.07562580704689026
+      },
+      {
+        "word": " Search",
+        "start": 1.28,
+        "end": 1.7,
+        "probability": 0.6356759667396545
+      },
+      {
+        "word": " Demonstration",
+        "start": 1.7,
+        "end": 2.62,
+        "probability": 0.8023581107457479
+      },
+      {
+        "word": " for",
+        "start": 2.62,
+        "end": 2.92,
+        "probability": 0.9178047776222229
+      },
+      {
+        "word": " Dr.",
+        "start": 2.92,
+        "end": 3.22,
+        "probability": 0.6060803532600403
+      },
+      {
+        "word": " Lard",
+        "start": 3.32,
+        "end": 3.62,
+        "probability": 0.7181338965892792
+      },
+      {
+        "word": " and",
+        "start": 3.62,
+        "end": 3.94,
+        "probability": 0.8818137645721436
+      },
+      {
+        "word": " Ayurprana.",
+        "start": 3.94,
+        "end": 4.66,
+        "probability": 0.6216081231832504
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "seek": 0,
+    "start": 6.94,
+    "end": 13.36,
+    "text": " In this demonstration I'll show the user experience of running a peak search on the Ayurprana website.",
+    "tokens": [
+      50714,
+      682,
+      341,
+      16520,
+      286,
+      603,
+      855,
+      264,
+      4195,
+      1752,
+      295,
+      2614,
+      257,
+      10651,
+      3164,
+      322,
+      264,
+      286,
+      404,
+      81,
+      2095,
+      3144,
+      13,
+      51064
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.2690425083555024,
+    "compression_ratio": 1.6059113300492611,
+    "no_speech_prob": 0.06718514859676361,
+    "words": [
+      {
+        "word": " In",
+        "start": 6.94,
+        "end": 7.54,
+        "probability": 0.8875755667686462
+      },
+      {
+        "word": " this",
+        "start": 7.54,
+        "end": 7.74,
+        "probability": 0.997730553150177
+      },
+      {
+        "word": " demonstration",
+        "start": 7.74,
+        "end": 8.48,
+        "probability": 0.9870972633361816
+      },
+      {
+        "word": " I'll",
+        "start": 8.48,
+        "end": 8.84,
+        "probability": 0.7332285642623901
+      },
+      {
+        "word": " show",
+        "start": 8.84,
+        "end": 9.12,
+        "probability": 0.9986057877540588
+      },
+      {
+        "word": " the",
+        "start": 9.12,
+        "end": 9.42,
+        "probability": 0.9824899435043335
+      },
+      {
+        "word": " user",
+        "start": 9.42,
+        "end": 9.68,
+        "probability": 0.9591188430786133
+      },
+      {
+        "word": " experience",
+        "start": 9.68,
+        "end": 10.4,
+        "probability": 0.9939813017845154
+      },
+      {
+        "word": " of",
+        "start": 10.4,
+        "end": 10.8,
+        "probability": 0.9905919432640076
+      },
+      {
+        "word": " running",
+        "start": 10.8,
+        "end": 11.06,
+        "probability": 0.9960982799530029
+      },
+      {
+        "word": " a",
+        "start": 11.06,
+        "end": 11.26,
+        "probability": 0.9803417921066284
+      },
+      {
+        "word": " peak",
+        "start": 11.26,
+        "end": 11.42,
+        "probability": 0.46028393507003784
+      },
+      {
+        "word": " search",
+        "start": 11.42,
+        "end": 11.98,
+        "probability": 0.9392746090888977
+      },
+      {
+        "word": " on",
+        "start": 11.98,
+        "end": 12.24,
+        "probability": 0.9848415851593018
+      },
+      {
+        "word": " the",
+        "start": 12.24,
+        "end": 12.38,
+        "probability": 0.9858468174934387
+      },
+      {
+        "word": " Ayurprana",
+        "start": 12.38,
+        "end": 12.92,
+        "probability": 0.9804089665412903
+      },
+      {
+        "word": " website.",
+        "start": 12.92,
+        "end": 13.36,
+        "probability": 0.9297378659248352
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "seek": 0,
+    "start": 14.32,
+    "end": 18.26,
+    "text": " The user can be browsing through a course such as the art of pulse.",
+    "tokens": [
+      51064,
+      440,
+      4195,
+      393,
+      312,
+      38602,
+      807,
+      257,
+      1164,
+      1270,
+      382,
+      264,
+      1523,
+      295,
+      17709,
+      13,
+      51314
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.2690425083555024,
+    "compression_ratio": 1.6059113300492611,
+    "no_speech_prob": 0.06718514859676361,
+    "words": [
+      {
+        "word": " The",
+        "start": 14.32,
+        "end": 14.92,
+        "probability": 0.979945719242096
+      },
+      {
+        "word": " user",
+        "start": 14.92,
+        "end": 15.16,
+        "probability": 0.996538519859314
+      },
+      {
+        "word": " can",
+        "start": 15.16,
+        "end": 15.36,
+        "probability": 0.9977384805679321
+      },
+      {
+        "word": " be",
+        "start": 15.36,
+        "end": 15.48,
+        "probability": 0.9799171090126038
+      },
+      {
+        "word": " browsing",
+        "start": 15.48,
+        "end": 15.88,
+        "probability": 0.9984427094459534
+      },
+      {
+        "word": " through",
+        "start": 15.88,
+        "end": 16.3,
+        "probability": 0.9965709447860718
+      },
+      {
+        "word": " a",
+        "start": 16.3,
+        "end": 16.56,
+        "probability": 0.9904250502586365
+      },
+      {
+        "word": " course",
+        "start": 16.56,
+        "end": 16.8,
+        "probability": 0.9586976170539856
+      },
+      {
+        "word": " such",
+        "start": 16.8,
+        "end": 17.24,
+        "probability": 0.7312029600143433
+      },
+      {
+        "word": " as",
+        "start": 17.24,
+        "end": 17.36,
+        "probability": 0.9969019889831543
+      },
+      {
+        "word": " the",
+        "start": 17.36,
+        "end": 17.58,
+        "probability": 0.9428187012672424
+      },
+      {
+        "word": " art",
+        "start": 17.58,
+        "end": 17.78,
+        "probability": 0.21588283777236938
+      },
+      {
+        "word": " of",
+        "start": 17.78,
+        "end": 17.92,
+        "probability": 0.6563597917556763
+      },
+      {
+        "word": " pulse.",
+        "start": 17.92,
+        "end": 18.26,
+        "probability": 0.6036723852157593
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "seek": 0,
+    "start": 19.66,
+    "end": 26.84,
+    "text": " And if they have a question such as what is the Prakriti pulse they can click on this search feature here",
+    "tokens": [
+      51314,
+      400,
+      498,
+      436,
+      362,
+      257,
+      1168,
+      1270,
+      382,
+      437,
+      307,
+      264,
+      430,
+      11272,
+      3210,
+      72,
+      17709,
+      436,
+      393,
+      2052,
+      322,
+      341,
+      3164,
+      4111,
+      510,
+      51714
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.2690425083555024,
+    "compression_ratio": 1.6059113300492611,
+    "no_speech_prob": 0.06718514859676361,
+    "words": [
+      {
+        "word": " And",
+        "start": 19.66,
+        "end": 20.04,
+        "probability": 0.8402113318443298
+      },
+      {
+        "word": " if",
+        "start": 20.04,
+        "end": 20.16,
+        "probability": 0.9849249720573425
+      },
+      {
+        "word": " they",
+        "start": 20.16,
+        "end": 20.26,
+        "probability": 0.9964711666107178
+      },
+      {
+        "word": " have",
+        "start": 20.26,
+        "end": 20.42,
+        "probability": 0.9982048273086548
+      },
+      {
+        "word": " a",
+        "start": 20.42,
+        "end": 20.54,
+        "probability": 0.9971599578857422
+      },
+      {
+        "word": " question",
+        "start": 20.54,
+        "end": 21.06,
+        "probability": 0.998650848865509
+      },
+      {
+        "word": " such",
+        "start": 21.06,
+        "end": 22.82,
+        "probability": 0.4256090819835663
+      },
+      {
+        "word": " as",
+        "start": 22.82,
+        "end": 23.08,
+        "probability": 0.9872419834136963
+      },
+      {
+        "word": " what",
+        "start": 23.08,
+        "end": 23.3,
+        "probability": 0.596295177936554
+      },
+      {
+        "word": " is",
+        "start": 23.3,
+        "end": 23.48,
+        "probability": 0.9938226938247681
+      },
+      {
+        "word": " the",
+        "start": 23.48,
+        "end": 23.62,
+        "probability": 0.9942682981491089
+      },
+      {
+        "word": " Prakriti",
+        "start": 23.62,
+        "end": 24.16,
+        "probability": 0.6690533198416233
+      },
+      {
+        "word": " pulse",
+        "start": 24.16,
+        "end": 24.48,
+        "probability": 0.9782594442367554
+      },
+      {
+        "word": " they",
+        "start": 24.48,
+        "end": 24.88,
+        "probability": 0.5882048606872559
+      },
+      {
+        "word": " can",
+        "start": 24.88,
+        "end": 25.06,
+        "probability": 0.9985315799713135
+      },
+      {
+        "word": " click",
+        "start": 25.06,
+        "end": 25.3,
+        "probability": 0.9982965588569641
+      },
+      {
+        "word": " on",
+        "start": 25.3,
+        "end": 25.5,
+        "probability": 0.9984257221221924
+      },
+      {
+        "word": " this",
+        "start": 25.5,
+        "end": 25.7,
+        "probability": 0.6062694787979126
+      },
+      {
+        "word": " search",
+        "start": 25.7,
+        "end": 26.02,
+        "probability": 0.9870008230209351
+      },
+      {
+        "word": " feature",
+        "start": 26.02,
+        "end": 26.34,
+        "probability": 0.9847886562347412
+      },
+      {
+        "word": " here",
+        "start": 26.34,
+        "end": 26.84,
+        "probability": 0.9934779405593872
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "seek": 2684,
+    "start": 26.84,
+    "end": 32.7,
+    "text": " and ask what is the Prakriti pulse?",
+    "tokens": [
+      50364,
+      293,
+      1029,
+      437,
+      307,
+      264,
+      430,
+      11272,
+      3210,
+      72,
+      17709,
+      30,
+      50714
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.1867966651916504,
+    "compression_ratio": 1.4275362318840579,
+    "no_speech_prob": 0.05848712846636772,
+    "words": [
+      {
+        "word": " and",
+        "start": 26.84,
+        "end": 27.68,
+        "probability": 0.25626111030578613
+      },
+      {
+        "word": " ask",
+        "start": 27.68,
+        "end": 28.22,
+        "probability": 0.9519014954566956
+      },
+      {
+        "word": " what",
+        "start": 28.22,
+        "end": 29.38,
+        "probability": 0.5286844968795776
+      },
+      {
+        "word": " is",
+        "start": 29.38,
+        "end": 29.74,
+        "probability": 0.9743204712867737
+      },
+      {
+        "word": " the",
+        "start": 29.74,
+        "end": 30.16,
+        "probability": 0.9478902816772461
+      },
+      {
+        "word": " Prakriti",
+        "start": 30.16,
+        "end": 32.1,
+        "probability": 0.6406583683565259
+      },
+      {
+        "word": " pulse?",
+        "start": 32.1,
+        "end": 32.7,
+        "probability": 0.8375205397605896
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "seek": 2684,
+    "start": 34.82000000000001,
+    "end": 39.18,
+    "text": " The deep bass layer it is 7th level.",
+    "tokens": [
+      50714,
+      440,
+      2452,
+      10136,
+      4583,
+      309,
+      307,
+      1614,
+      392,
+      1496,
+      13,
+      51014
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.1867966651916504,
+    "compression_ratio": 1.4275362318840579,
+    "no_speech_prob": 0.05848712846636772,
+    "words": [
+      {
+        "word": " The",
+        "start": 34.82000000000001,
+        "end": 35.82,
+        "probability": 0.7693400979042053
+      },
+      {
+        "word": " deep",
+        "start": 35.82,
+        "end": 36.14,
+        "probability": 0.33979374170303345
+      },
+      {
+        "word": " bass",
+        "start": 36.14,
+        "end": 36.38,
+        "probability": 0.5235833525657654
+      },
+      {
+        "word": " layer",
+        "start": 36.38,
+        "end": 36.72,
+        "probability": 0.8358456492424011
+      },
+      {
+        "word": " it",
+        "start": 36.72,
+        "end": 38.14,
+        "probability": 0.3355562090873718
+      },
+      {
+        "word": " is",
+        "start": 38.14,
+        "end": 38.32,
+        "probability": 0.9870376586914062
+      },
+      {
+        "word": " 7th",
+        "start": 38.32,
+        "end": 38.92,
+        "probability": 0.7263584733009338
+      },
+      {
+        "word": " level.",
+        "start": 38.92,
+        "end": 39.18,
+        "probability": 0.9651956558227539
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "seek": 2684,
+    "start": 40.46,
+    "end": 46.42,
+    "text": " So 7th level deep pulse corresponds to Prakriti.",
+    "tokens": [
+      51014,
+      407,
+      1614,
+      392,
+      1496,
+      2452,
+      17709,
+      23249,
+      281,
+      430,
+      11272,
+      3210,
+      72,
+      13,
+      51364
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.1867966651916504,
+    "compression_ratio": 1.4275362318840579,
+    "no_speech_prob": 0.05848712846636772,
+    "words": [
+      {
+        "word": " So",
+        "start": 40.46,
+        "end": 41.04,
+        "probability": 0.9151215553283691
+      },
+      {
+        "word": " 7th",
+        "start": 41.04,
+        "end": 41.7,
+        "probability": 0.9382320046424866
+      },
+      {
+        "word": " level",
+        "start": 41.7,
+        "end": 42.04,
+        "probability": 0.9883913397789001
+      },
+      {
+        "word": " deep",
+        "start": 42.04,
+        "end": 43.72,
+        "probability": 0.351170152425766
+      },
+      {
+        "word": " pulse",
+        "start": 43.72,
+        "end": 44.3,
+        "probability": 0.8776413798332214
+      },
+      {
+        "word": " corresponds",
+        "start": 44.3,
+        "end": 44.84,
+        "probability": 0.9957811832427979
+      },
+      {
+        "word": " to",
+        "start": 44.84,
+        "end": 45.2,
+        "probability": 0.9976542592048645
+      },
+      {
+        "word": " Prakriti.",
+        "start": 45.2,
+        "end": 46.42,
+        "probability": 0.9688031226396561
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "seek": 2684,
+    "start": 46.96,
+    "end": 52.0,
+    "text": " You can see immediately we get the response back playing at the exact point",
+    "tokens": [
+      51364,
+      509,
+      393,
+      536,
+      4258,
+      321,
+      483,
+      264,
+      4134,
+      646,
+      2433,
+      412,
+      264,
+      1900,
+      935,
+      51614
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.1867966651916504,
+    "compression_ratio": 1.4275362318840579,
+    "no_speech_prob": 0.05848712846636772,
+    "words": [
+      {
+        "word": " You",
+        "start": 46.96,
+        "end": 47.58,
+        "probability": 0.6626935601234436
+      },
+      {
+        "word": " can",
+        "start": 47.58,
+        "end": 47.72,
+        "probability": 0.9905136823654175
+      },
+      {
+        "word": " see",
+        "start": 47.72,
+        "end": 47.92,
+        "probability": 0.9958515167236328
+      },
+      {
+        "word": " immediately",
+        "start": 47.92,
+        "end": 48.3,
+        "probability": 0.9841294288635254
+      },
+      {
+        "word": " we",
+        "start": 48.3,
+        "end": 48.62,
+        "probability": 0.9247862100601196
+      },
+      {
+        "word": " get",
+        "start": 48.62,
+        "end": 48.8,
+        "probability": 0.8641048669815063
+      },
+      {
+        "word": " the",
+        "start": 48.8,
+        "end": 48.98,
+        "probability": 0.9883749485015869
+      },
+      {
+        "word": " response",
+        "start": 48.98,
+        "end": 49.28,
+        "probability": 0.989273726940155
+      },
+      {
+        "word": " back",
+        "start": 49.28,
+        "end": 49.9,
+        "probability": 0.9896714687347412
+      },
+      {
+        "word": " playing",
+        "start": 49.9,
+        "end": 50.62,
+        "probability": 0.790825605392456
+      },
+      {
+        "word": " at",
+        "start": 50.62,
+        "end": 51.08,
+        "probability": 0.9822447896003723
+      },
+      {
+        "word": " the",
+        "start": 51.08,
+        "end": 51.36,
+        "probability": 0.9906932711601257
+      },
+      {
+        "word": " exact",
+        "start": 51.36,
+        "end": 51.6,
+        "probability": 0.9967204928398132
+      },
+      {
+        "word": " point",
+        "start": 51.6,
+        "end": 52.0,
+        "probability": 0.9931812882423401
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "seek": 5200,
+    "start": 52.0,
+    "end": 54.88,
+    "text": " where Dr. Lard is explaining this concept.",
+    "tokens": [
+      50364,
+      689,
+      2491,
+      13,
+      441,
+      515,
+      307,
+      13468,
+      341,
+      3410,
+      13,
+      50564
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.22989888938076525,
+    "compression_ratio": 1.5226130653266332,
+    "no_speech_prob": 0.028873184695839882,
+    "words": [
+      {
+        "word": " where",
+        "start": 52.0,
+        "end": 52.34,
+        "probability": 0.3079077899456024
+      },
+      {
+        "word": " Dr.",
+        "start": 52.34,
+        "end": 53.14,
+        "probability": 0.4095403254032135
+      },
+      {
+        "word": " Lard",
+        "start": 53.2,
+        "end": 53.4,
+        "probability": 0.1914898157119751
+      },
+      {
+        "word": " is",
+        "start": 53.4,
+        "end": 53.6,
+        "probability": 0.9744773507118225
+      },
+      {
+        "word": " explaining",
+        "start": 53.6,
+        "end": 54.12,
+        "probability": 0.9951619505882263
+      },
+      {
+        "word": " this",
+        "start": 54.12,
+        "end": 54.42,
+        "probability": 0.8492050766944885
+      },
+      {
+        "word": " concept.",
+        "start": 54.42,
+        "end": 54.88,
+        "probability": 0.9964843988418579
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "seek": 5200,
+    "start": 56.0,
+    "end": 60.12,
+    "text": " Never related questions such as what is the Vata pulse like which if we click?",
+    "tokens": [
+      50564,
+      7344,
+      4077,
+      1651,
+      1270,
+      382,
+      437,
+      307,
+      264,
+      691,
+      3274,
+      17709,
+      411,
+      597,
+      498,
+      321,
+      2052,
+      30,
+      50864
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.22989888938076525,
+    "compression_ratio": 1.5226130653266332,
+    "no_speech_prob": 0.028873184695839882,
+    "words": [
+      {
+        "word": " Never",
+        "start": 55.78,
+        "end": 56.12,
+        "probability": 0.24216392636299133
+      },
+      {
+        "word": " related",
+        "start": 56.12,
+        "end": 56.48,
+        "probability": 0.8831039667129517
+      },
+      {
+        "word": " questions",
+        "start": 56.48,
+        "end": 56.98,
+        "probability": 0.9043760895729065
+      },
+      {
+        "word": " such",
+        "start": 56.98,
+        "end": 57.42,
+        "probability": 0.5466594099998474
+      },
+      {
+        "word": " as",
+        "start": 57.42,
+        "end": 57.62,
+        "probability": 0.9846842885017395
+      },
+      {
+        "word": " what",
+        "start": 57.62,
+        "end": 57.76,
+        "probability": 0.7565438151359558
+      },
+      {
+        "word": " is",
+        "start": 57.76,
+        "end": 57.9,
+        "probability": 0.9759303331375122
+      },
+      {
+        "word": " the",
+        "start": 57.9,
+        "end": 58.02,
+        "probability": 0.8860825300216675
+      },
+      {
+        "word": " Vata",
+        "start": 58.02,
+        "end": 58.3,
+        "probability": 0.3103943094611168
+      },
+      {
+        "word": " pulse",
+        "start": 58.3,
+        "end": 58.64,
+        "probability": 0.028876906260848045
+      },
+      {
+        "word": " like",
+        "start": 58.64,
+        "end": 58.88,
+        "probability": 0.7093921303749084
+      },
+      {
+        "word": " which",
+        "start": 58.88,
+        "end": 59.42,
+        "probability": 0.33859607577323914
+      },
+      {
+        "word": " if",
+        "start": 59.42,
+        "end": 59.56,
+        "probability": 0.9710931777954102
+      },
+      {
+        "word": " we",
+        "start": 59.56,
+        "end": 59.68,
+        "probability": 0.9969512224197388
+      },
+      {
+        "word": " click?",
+        "start": 59.68,
+        "end": 60.12,
+        "probability": 0.9898942112922668
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "seek": 5200,
+    "start": 62.14,
+    "end": 71.42,
+    "text": " If Vata is the predominant dosa in the body then the Nadi the pulse will move horizontally fast, fever and it will move like a cobra.",
+    "tokens": [
+      50864,
+      759,
+      691,
+      3274,
+      307,
+      264,
+      21456,
+      394,
+      4491,
+      64,
+      294,
+      264,
+      1772,
+      550,
+      264,
+      426,
+      5688,
+      264,
+      17709,
+      486,
+      1286,
+      33796,
+      2370,
+      11,
+      18277,
+      293,
+      309,
+      486,
+      1286,
+      411,
+      257,
+      48790,
+      13,
+      51364
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.22989888938076525,
+    "compression_ratio": 1.5226130653266332,
+    "no_speech_prob": 0.028873184695839882,
+    "words": [
+      {
+        "word": " If",
+        "start": 62.14,
+        "end": 62.44,
+        "probability": 0.5955885052680969
+      },
+      {
+        "word": " Vata",
+        "start": 62.44,
+        "end": 62.86,
+        "probability": 0.841036468744278
+      },
+      {
+        "word": " is",
+        "start": 62.86,
+        "end": 63.06,
+        "probability": 0.9942308664321899
+      },
+      {
+        "word": " the",
+        "start": 63.06,
+        "end": 63.18,
+        "probability": 0.9828917980194092
+      },
+      {
+        "word": " predominant",
+        "start": 63.18,
+        "end": 63.82,
+        "probability": 0.996230810880661
+      },
+      {
+        "word": " dosa",
+        "start": 63.82,
+        "end": 64.3,
+        "probability": 0.7003003656864166
+      },
+      {
+        "word": " in",
+        "start": 64.3,
+        "end": 64.42,
+        "probability": 0.995945155620575
+      },
+      {
+        "word": " the",
+        "start": 64.42,
+        "end": 64.6,
+        "probability": 0.9941712021827698
+      },
+      {
+        "word": " body",
+        "start": 64.6,
+        "end": 64.94,
+        "probability": 0.9958208799362183
+      },
+      {
+        "word": " then",
+        "start": 64.94,
+        "end": 65.74,
+        "probability": 0.694364070892334
+      },
+      {
+        "word": " the",
+        "start": 65.74,
+        "end": 66.0,
+        "probability": 0.9596468210220337
+      },
+      {
+        "word": " Nadi",
+        "start": 66.0,
+        "end": 66.32,
+        "probability": 0.6280076801776886
+      },
+      {
+        "word": " the",
+        "start": 66.32,
+        "end": 66.58,
+        "probability": 0.39511623978614807
+      },
+      {
+        "word": " pulse",
+        "start": 66.58,
+        "end": 66.94,
+        "probability": 0.9112136960029602
+      },
+      {
+        "word": " will",
+        "start": 66.94,
+        "end": 67.22,
+        "probability": 0.9911746978759766
+      },
+      {
+        "word": " move",
+        "start": 67.22,
+        "end": 67.5,
+        "probability": 0.9876060485839844
+      },
+      {
+        "word": " horizontally",
+        "start": 67.5,
+        "end": 68.08,
+        "probability": 0.4218916594982147
+      },
+      {
+        "word": " fast,",
+        "start": 68.08,
+        "end": 68.82,
+        "probability": 0.8495732545852661
+      },
+      {
+        "word": " fever",
+        "start": 69.12,
+        "end": 69.32,
+        "probability": 0.7756565809249878
+      },
+      {
+        "word": " and",
+        "start": 69.32,
+        "end": 69.96,
+        "probability": 0.6997408866882324
+      },
+      {
+        "word": " it",
+        "start": 69.96,
+        "end": 70.16,
+        "probability": 0.9862949252128601
+      },
+      {
+        "word": " will",
+        "start": 70.16,
+        "end": 70.34,
+        "probability": 0.9964297413825989
+      },
+      {
+        "word": " move",
+        "start": 70.34,
+        "end": 70.62,
+        "probability": 0.9962357878684998
+      },
+      {
+        "word": " like",
+        "start": 70.62,
+        "end": 70.86,
+        "probability": 0.9975255131721497
+      },
+      {
+        "word": " a",
+        "start": 70.86,
+        "end": 71.06,
+        "probability": 0.9497522711753845
+      },
+      {
+        "word": " cobra.",
+        "start": 71.06,
+        "end": 71.42,
+        "probability": 0.8472469449043274
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "seek": 5200,
+    "start": 72.28,
+    "end": 77.48,
+    "text": " That cobra pulse is called Vata Nadi Sarpagati.",
+    "tokens": [
+      51364,
+      663,
+      48790,
+      17709,
+      307,
+      1219,
+      691,
+      3274,
+      426,
+      5688,
+      318,
+      6529,
+      559,
+      6908,
+      13,
+      51714
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.22989888938076525,
+    "compression_ratio": 1.5226130653266332,
+    "no_speech_prob": 0.028873184695839882,
+    "words": [
+      {
+        "word": " That",
+        "start": 72.28,
+        "end": 72.88,
+        "probability": 0.9379355907440186
+      },
+      {
+        "word": " cobra",
+        "start": 72.88,
+        "end": 73.38,
+        "probability": 0.981873631477356
+      },
+      {
+        "word": " pulse",
+        "start": 73.38,
+        "end": 74.0,
+        "probability": 0.992352306842804
+      },
+      {
+        "word": " is",
+        "start": 74.0,
+        "end": 74.8,
+        "probability": 0.981502890586853
+      },
+      {
+        "word": " called",
+        "start": 74.8,
+        "end": 75.04,
+        "probability": 0.9964845180511475
+      },
+      {
+        "word": " Vata",
+        "start": 75.04,
+        "end": 75.52,
+        "probability": 0.7391281425952911
+      },
+      {
+        "word": " Nadi",
+        "start": 75.52,
+        "end": 76.0,
+        "probability": 0.9557445645332336
+      },
+      {
+        "word": " Sarpagati.",
+        "start": 76.0,
+        "end": 77.48,
+        "probability": 0.5524643734097481
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "seek": 7748,
+    "start": 79.76,
+    "end": 81.72,
+    "text": " Thank you for watching this demonstration.",
+    "tokens": [
+      50414,
+      1044,
+      291,
+      337,
+      1976,
+      341,
+      16520,
+      13,
+      50564
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.18110196486763333,
+    "compression_ratio": 1.0941176470588236,
+    "no_speech_prob": 0.032528337091207504,
+    "words": [
+      {
+        "word": " Thank",
+        "start": 79.76,
+        "end": 80.28,
+        "probability": 0.8709193468093872
+      },
+      {
+        "word": " you",
+        "start": 80.28,
+        "end": 80.48,
+        "probability": 0.9814088940620422
+      },
+      {
+        "word": " for",
+        "start": 80.48,
+        "end": 80.6,
+        "probability": 0.9926357865333557
+      },
+      {
+        "word": " watching",
+        "start": 80.6,
+        "end": 80.9,
+        "probability": 0.9960467219352722
+      },
+      {
+        "word": " this",
+        "start": 80.9,
+        "end": 81.12,
+        "probability": 0.9762997031211853
+      },
+      {
+        "word": " demonstration.",
+        "start": 81.12,
+        "end": 81.72,
+        "probability": 0.9889109134674072
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "seek": 7748,
+    "start": 82.44,
+    "end": 84.92,
+    "text": " For any questions please reach out to us by email.",
+    "tokens": [
+      50564,
+      1171,
+      604,
+      1651,
+      1767,
+      2524,
+      484,
+      281,
+      505,
+      538,
+      3796,
+      13,
+      50714
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.18110196486763333,
+    "compression_ratio": 1.0941176470588236,
+    "no_speech_prob": 0.032528337091207504,
+    "words": [
+      {
+        "word": " For",
+        "start": 82.44,
+        "end": 82.66,
+        "probability": 0.5612127184867859
+      },
+      {
+        "word": " any",
+        "start": 82.66,
+        "end": 82.84,
+        "probability": 0.9822947978973389
+      },
+      {
+        "word": " questions",
+        "start": 82.84,
+        "end": 83.2,
+        "probability": 0.993984043598175
+      },
+      {
+        "word": " please",
+        "start": 83.2,
+        "end": 83.6,
+        "probability": 0.495996356010437
+      },
+      {
+        "word": " reach",
+        "start": 83.6,
+        "end": 83.9,
+        "probability": 0.9885640144348145
+      },
+      {
+        "word": " out",
+        "start": 83.9,
+        "end": 84.1,
+        "probability": 0.9958141446113586
+      },
+      {
+        "word": " to",
+        "start": 84.1,
+        "end": 84.28,
+        "probability": 0.9970278143882751
+      },
+      {
+        "word": " us",
+        "start": 84.28,
+        "end": 84.4,
+        "probability": 0.999432384967804
+      },
+      {
+        "word": " by",
+        "start": 84.4,
+        "end": 84.6,
+        "probability": 0.9389654994010925
+      },
+      {
+        "word": " email.",
+        "start": 84.6,
+        "end": 84.92,
+        "probability": 0.9870870113372803
+      }
+    ]
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "query": "tell me about aspen dental",
+  "no_ans_gap": 4.170384168624878,
+  "answers": [
+    {
+      "answer": "{\n  \"id\": 101,\n  \"seek\": 30246,\n  \"start\": 317.58,\n  \"end\": 321.68,\n  \"text\": \" Good thing, Aspen Dental offers affordable, complete care all in one place",
+      "type": "extractive",
+      "score": 0.15442296862602234,
+      "context": "{\n  \"id\": 101,\n  \"seek\": 30246,\n  \"start\": 317.58,\n  \"end\": 321.68,\n  \"text\": \" Good thing, Aspen Dental offers affordable, complete care all in one place",
+      "offsets_in_document": [
+        {
+          "start": 131,
+          "end": 285
+        }
+      ],
+      "offsets_in_context": [
+        {
+          "start": 0,
+          "end": 154
+        }
+      ],
+      "document_ids": [
+        "7720e788739cfe7d02d938093459dea2"
+      ],
+      "meta": {}
+    }
+  ],
+  "documents": [
+    {
+      "content": "    },\n    {\n      \"word\": \" own.\",\n      \"start\": 316.28,\n      \"end\": 316.5,\n      \"probability\": 0.8940435647964478\n    }\n  ]\n}\n{\n  \"id\": 101,\n  \"seek\": 30246,\n  \"start\": 317.58,\n  \"end\": 321.68,\n  \"text\": \" Good thing, Aspen Dental offers affordable, complete care all in one place\",\n  \"tokens\": [\n    50900,\n    2205,\n    551,\n    11,\n    1018,\n    5200,\n    413,\n    14533,\n    7736,\n    12028,\n    11,\n    3566,\n    1127,\n    439,\n    294,\n    472,\n    1081,\n    51160\n  ],\n  \"temperature\": 0.0,\n  \"avg_lo",
+      "content_type": "text",
+      "score": 0.6751790810232093,
+      "meta": {},
+      "id_hash_keys": [
+        "content"
+      ],
+      "embedding": null,
+      "id": "7720e788739cfe7d02d938093459dea2"
+    }
+  ],
+  "root_node": "Query",
+  "params": {
+    "Retriever": {
+      "top_k": 1
+    },
+    "Reader": {
+      "top_k": 1
+    }
+  },
+  "node_id": "Reader"
+}
