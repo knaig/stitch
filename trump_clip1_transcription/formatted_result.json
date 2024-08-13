@@ -1,9 +1,9 @@
 {
-  "answer": "It takes healthy joints",
-  "start": 429.2,
+  "answer": "{\n  \"id\": 101,\n  \"seek\": 30246,\n  \"start\": 317.58,\n  \"end\": 321.68,\n  \"text\": \" Good thing, Aspen Dental offers affordable, complete care all in one place",
+  "start": 317.58,
   "documents": [
     {
-      "content": "It takes healthy joints"
+      "content": "{\n  \"id\": 101,\n  \"seek\": 30246,\n  \"start\": 317.58,\n  \"end\": 321.68,\n  \"text\": \" Good thing, Aspen Dental offers affordable, complete care all in one place"
     }
   ]
 }

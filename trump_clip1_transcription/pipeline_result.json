@@ -1,41 +1,41 @@
 {
-  "query": "co-pilot",
-  "no_ans_gap": 0.9718151092529297,
+  "query": "tell me about aspen dental",
+  "no_ans_gap": 4.170384168624878,
   "answers": [
     {
-      "answer": "It takes healthy joints",
+      "answer": "{\n  \"id\": 101,\n  \"seek\": 30246,\n  \"start\": 317.58,\n  \"end\": 321.68,\n  \"text\": \" Good thing, Aspen Dental offers affordable, complete care all in one place",
       "type": "extractive",
-      "score": 0.19449374079704285,
-      "context": "  \"seek\": 41372,\n  \"start\": 429.2,\n  \"end\": 431.36,\n  \"text\": \" It takes healthy joints to be a co-pilot\",\n  \"tokens\": [\n    51128,\n    467,\n    2516,",
+      "score": 0.15442296862602234,
+      "context": "{\n  \"id\": 101,\n  \"seek\": 30246,\n  \"start\": 317.58,\n  \"end\": 321.68,\n  \"text\": \" Good thing, Aspen Dental offers affordable, complete care all in one place",
       "offsets_in_document": [
         {
-          "start": 239,
-          "end": 262
+          "start": 131,
+          "end": 285
         }
       ],
       "offsets_in_context": [
         {
-          "start": 64,
-          "end": 87
+          "start": 0,
+          "end": 154
         }
       ],
       "document_ids": [
-        "5c798ffa460ee4b818e133a37d4a1699"
+        "7720e788739cfe7d02d938093459dea2"
       ],
       "meta": {}
     }
   ],
   "documents": [
     {
-      "content": "\": 0.9940104484558105\n    },\n    {\n      \"word\": \" statement.\",\n      \"start\": 428.26,\n      \"end\": 428.72,\n      \"probability\": 0.9982214570045471\n    }\n  ]\n}\n{\n  \"id\": 134,\n  \"seek\": 41372,\n  \"start\": 429.2,\n  \"end\": 431.36,\n  \"text\": \" It takes healthy joints to be a co-pilot\",\n  \"tokens\": [\n    51128,\n    467,\n    2516,\n    4627,\n    19949,\n    281,\n    312,\n    257,\n    598,\n    12,\n    79,\n    31516,\n    51248\n  ],\n  \"temperature\": 0.0,\n  \"avg_logprob\": -0.2669875281197684,\n  \"compression_ratio\": 1.57",
+      "content": "    },\n    {\n      \"word\": \" own.\",\n      \"start\": 316.28,\n      \"end\": 316.5,\n      \"probability\": 0.8940435647964478\n    }\n  ]\n}\n{\n  \"id\": 101,\n  \"seek\": 30246,\n  \"start\": 317.58,\n  \"end\": 321.68,\n  \"text\": \" Good thing, Aspen Dental offers affordable, complete care all in one place\",\n  \"tokens\": [\n    50900,\n    2205,\n    551,\n    11,\n    1018,\n    5200,\n    413,\n    14533,\n    7736,\n    12028,\n    11,\n    3566,\n    1127,\n    439,\n    294,\n    472,\n    1081,\n    51160\n  ],\n  \"temperature\": 0.0,\n  \"avg_lo",
       "content_type": "text",
-      "score": 0.6737135396320081,
+      "score": 0.6751790810232093,
       "meta": {},
       "id_hash_keys": [
         "content"
       ],
       "embedding": null,
-      "id": "5c798ffa460ee4b818e133a37d4a1699"
+      "id": "7720e788739cfe7d02d938093459dea2"
     }
   ],
   "root_node": "Query",
