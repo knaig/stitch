@@ -23,9 +23,8 @@ def search_channels(query, page_token=None):
         part="snippet",
         type="channel",
         q=query,
-        maxResults=50,
+        maxResults=100,
         pageToken=page_token,
-        regionCode="US",  # Assuming we're focusing on US-based English content
         relevanceLanguage="en"
     )
     response = request.execute()
