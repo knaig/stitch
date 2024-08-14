@@ -3,7 +3,7 @@ import googleapiclient.discovery
 import csv
 
 # Replace with your own API key
-API_KEY = os.getenv("YOUTUBE_API_KEY")
+API_KEY = os.getenv("AIzaSyCPDqiAcioF07fhKaPADuy53kuZIgI6o-A")  #This is for livlyfe.in. Change this to YOUTUBE_API_KEY when using karthik.naig@gmail account
 
 # Initialize YouTube API client
 youtube = googleapiclient.discovery.build("youtube", "v3", developerKey=API_KEY)
@@ -124,29 +124,7 @@ def get_video_durations(uploads_playlist_id):
 def main():
     # Categories and associated keywords
 
-    keywords = {
-        "education": [
-            "education", "learning", "knowledge", "teaching", "tutoring", "training", "courses", 
-            "classes", "study", "lessons", "homework", "tutorials", "mathematics", "science", 
-            "physics", "chemistry", "biology", "literature", "history", "geography", 
-            "economics", "sociology", "philosophy", "psychology", "anthropology", 
-            "politics", "mathematics", "STEM", "engineering", "electronics", 
-            "robotics", "data science", "research", "homeschooling", 
-            "culture", "parenting", "learning", "STEM"
-        ],
-        "health_fitness_wellness": [
-            "health", "wellness", "medicine", "meditation", "mental health", "fitness", 
-            "nutrition", "exercise", "workout", "yoga", "pilates", "weight loss", 
-            "diet", "healthy eating", "well-being", "sleep", "stress management", 
-            "self-care", "mental fitness", "therapy", "counseling", "self-improvement", 
-            "rehabilitation"
-        ],
-        "spirituality": [
-            "spiritual", "spirituality", "mindfulness", "meditation", "yoga", "holistic", 
-            "self-awareness", "inner peace", "consciousness", "enlightenment", "well-being", 
-            "mental clarity", "emotional balance", "personal growth", "self-realization", 
-            "healing", "energy", "chakra", "soul", "life purpose"
-        ],
+    keywords = {        
         "career_development": [
             "life coach", "career coaching", "time management", "productivity", 
             "professional development", "leadership", "management", "skills training", 
@@ -160,10 +138,27 @@ def main():
             "cooking", "baking", "culinary arts", "food"
         ],
         "business_finance": [
-            "small business", "marketing", "financial planning", "finance", 
-            "investing", "personal finance", "money management", "entrepreneurship", 
-            "real estate", "economics", "stock market", "taxes", "accounting", 
-            "business strategy", "business management", "startups", "sales"
+            "business", "finance", "financial planning", "investing", "investment", 
+            "personal finance", "money management", "entrepreneurship", "startups", 
+            "small business", "business strategy", "business management", 
+            "marketing", "digital marketing", "sales", "business development", 
+            "e-commerce", "online business", "lead generation", "branding", 
+            "consulting", "venture capital", "angel investing", "crowdfunding", 
+            "real estate", "property investment", "retirement planning", 
+            "wealth management", "taxes", "tax planning", "accounting", 
+            "bookkeeping", "stock market", "trading", "bonds", 
+            "mutual funds", "ETFs", "portfolio management", "risk management", 
+            "financial independence", "budgeting", "credit management", 
+            "debt management", "insurance", "life insurance", "health insurance", 
+            "estate planning", "legacy planning", "cryptocurrency", "blockchain", 
+            "financial literacy", "corporate finance", "mergers", "acquisitions", 
+            "business law", "contract law", "tax law", "economics", 
+            "macroeconomics", "microeconomics", "supply chain management", 
+            "inventory management", "logistics", "international trade", 
+            "export", "import", "market analysis", "competitive analysis", 
+            "business analytics", "data analytics", "business intelligence", 
+            "customer relationship management", "CRM", "financial statements", 
+            "balance sheet", "income statement", "cash flow", "profit and loss"
         ],
         "technology_reviews": [
             "tech reviews", "cybersecurity", "gadgets", "electronics", 
@@ -181,6 +176,29 @@ def main():
             "environment", "sustainability", "conservation", "green living", 
             "legal", "law", "compliance", "rights", "justice", "pet care", 
             "pets", "animals", "veterinary", "animal health"
+        ],
+        "education": [
+            "education", "learning", "knowledge", "teaching", "tutoring", "training", "courses", 
+            "classes", "study", "lessons", "homework", "tutorials", "mathematics", "science", 
+            "physics", "chemistry", "biology", "literature", "history", "geography", 
+            "economics", "sociology", "philosophy", "psychology", "anthropology", 
+            "politics", "mathematics", "STEM", "engineering", "electronics", 
+            "robotics", "data science", "research", "homeschooling", 
+            "culture", "parenting", "learning", "STEM"
+        ],
+
+        "health_fitness_wellness": [
+            "health", "wellness", "medicine", "meditation", "mental health", "fitness", 
+            "nutrition", "exercise", "workout", "yoga", "pilates", "weight loss", 
+            "diet", "healthy eating", "well-being", "sleep", "stress management", 
+            "self-care", "mental fitness", "therapy", "counseling", "self-improvement", 
+            "rehabilitation"
+        ],
+        "spirituality": [
+            "spiritual", "spirituality", "mindfulness", "meditation", "yoga", "holistic", 
+            "self-awareness", "inner peace", "consciousness", "enlightenment", "well-being", 
+            "mental clarity", "emotional balance", "personal growth", "self-realization", 
+            "healing", "energy", "chakra", "soul", "life purpose"
         ]
     }
 
