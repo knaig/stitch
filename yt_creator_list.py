@@ -12,6 +12,16 @@ youtube = googleapiclient.discovery.build("youtube", "v3", developerKey=API_KEY)
 organization_keywords = ["Inc", "Corp", "LLC", "Company", "Organization", "Group", "Institute", "Foundation", "Association", "Official"]
 islamic_keywords = ["Islam", "Muslim", "Quran", "Hadith", "Sharia", "Ummah", "Allah", "Muhammad", "Ramadan", "Hajj"]
 
+# File to store processed channel IDs
+processed_channels_file = "processed_channels.txt"
+
+# Load processed channel IDs
+if os.path.exists(processed_channels_file):
+    with open(processed_channels_file, 'r') as f:
+        processed_channels = set(f.read().splitlines())
+else:
+    processed_channels = set()
+
 def is_individual_channel(title, description):
     for keyword in organization_keywords + islamic_keywords:
         if keyword.lower() in title.lower() or keyword.lower() in description.lower():
@@ -23,9 +33,9 @@ def search_channels(query, page_token=None):
         part="snippet",
         type="channel",
         q=query,
-        maxResults=100,
+        maxResults=50,
         pageToken=page_token,
-        relevanceLanguage="en"
+        relevanceLanguage="en"  # Keep this to ensure English content
     )
     response = request.execute()
     return response
@@ -128,10 +138,11 @@ def main():
                 channel_details = get_channel_details(channel_ids)
                 
                 for item in channel_details['items']:
+                    channel_id = item['id']
                     title = item['snippet']['title']
                     description = item['snippet']['description']
                     
-                    if not is_individual_channel(title, description):
+                    if channel_id in processed_channels or not is_individual_channel(title, description):
                         continue
                     
                     subscriber_count = int(item['statistics'].get('subscriberCount', 0))
@@ -147,15 +158,21 @@ def main():
                                 # Write channel data to the CSV file
                                 writer.writerow([
                                     title,
-                                    item['id'],
+                                    channel_id,
                                     subscriber_count,
                                     total_videos,
                                     long_videos,
                                     description,
-                                    f"https://www.youtube.com/channel/{item['id']}"
+                                    f"https://www.youtube.com/channel/{channel_id}"
                                 ])
                                 category_channels_found += 1
                                 total_channels_found += 1
+
+                                # Save processed channel ID
+                                processed_channels.add(channel_id)
+                                with open(processed_channels_file, 'a') as f:
+                                    f.write(channel_id + "\n")
+                                
                                 if total_channels_found >= overall_channel_limit:
                                     break
                 
