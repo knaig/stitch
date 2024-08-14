@@ -9,11 +9,21 @@ API_KEY = os.getenv("YOUTUBE_API_KEY")
 youtube = googleapiclient.discovery.build("youtube", "v3", developerKey=API_KEY)
 
 # Keywords to filter out organizations and Islamic-related content
-organization_keywords = ["Inc", "Corp", "LLC", "Company", "Organization", "Group", "Institute", "Foundation", "Association", "Official"]
+organization_keywords = ["Inc", "Corp", "LLC", "Company", "Organization", "Group", "Foundation", "Association", "Official", "University"]
 islamic_keywords = ["Islam", "Muslim", "Quran", "Hadith", "Sharia", "Ummah", "Allah", "Muhammad", "Ramadan", "Hajj"]
 
 # File to store processed channel IDs
 processed_channels_file = "processed_channels.txt"
+
+# Thresholds and limits (can be easily modified)
+MIN_SUBSCRIBERS = 5000
+MAX_SUBSCRIBERS = 100000
+MIN_VIDEOS = 50
+MIN_LONG_VIDEOS = 30
+LONG_VIDEO_THRESHOLD_SECONDS = 1800  # 30 minutes
+CHANNEL_BATCH_SIZE = 50
+CHANNEL_LIMIT_PER_CATEGORY = 30
+OVERALL_CHANNEL_LIMIT = 300
 
 # Load processed channel IDs
 if os.path.exists(processed_channels_file):
@@ -28,12 +38,21 @@ def is_individual_channel(title, description):
             return False
     return True
 
-def search_channels(query, page_token=None):
+def matches_category(description, keywords):
+    description_lower = description.lower()
+    for category, keyword_list in keywords.items():
+        for keyword in keyword_list:
+            if keyword.lower() in description_lower:
+                return True
+    return False
+
+def search_channels(page_token=None):
+    print("Searching channels...")
+
     request = youtube.search().list(
         part="snippet",
         type="channel",
-        q=query,
-        maxResults=50,
+        maxResults=CHANNEL_BATCH_SIZE,
         pageToken=page_token,
         relevanceLanguage="en"  # Keep this to ensure English content
     )
@@ -41,6 +60,7 @@ def search_channels(query, page_token=None):
     return response
 
 def get_channel_details(channel_ids):
+    print(f"Fetching details for channels: {', '.join(channel_ids)}")
     request = youtube.channels().list(
         part="snippet,statistics,contentDetails",
         id=",".join(channel_ids)
@@ -55,7 +75,7 @@ def get_video_durations(uploads_playlist_id):
         playlist_request = youtube.playlistItems().list(
             part="contentDetails",
             playlistId=uploads_playlist_id,
-            maxResults=50,
+            maxResults=CHANNEL_BATCH_SIZE,
             pageToken=next_page_token
         )
         playlist_response = playlist_request.execute()
@@ -70,14 +90,17 @@ def get_video_durations(uploads_playlist_id):
     total_videos = len(video_ids)
     long_videos = 0
 
-    for i in range(0, len(video_ids), 50):
+    for i in range(0, len(video_ids), CHANNEL_BATCH_SIZE):
         video_request = youtube.videos().list(
             part="contentDetails",
-            id=",".join(video_ids[i:i+50])
+            id=",".join(video_ids[i:i+CHANNEL_BATCH_SIZE])
         )
         video_response = video_request.execute()
 
         for video in video_response['items']:
+            if 'duration' not in video['contentDetails']:
+                continue  # Skip videos without duration information
+
             duration = video['contentDetails']['duration']
             # Convert ISO 8601 duration to seconds
             hours = minutes = seconds = 0
@@ -93,95 +116,142 @@ def get_video_durations(uploads_playlist_id):
             
             total_seconds = hours * 3600 + minutes * 60 + seconds
 
-            if total_seconds >= 1800:  # 30 minutes = 1800 seconds
+            if total_seconds >= LONG_VIDEO_THRESHOLD_SECONDS:
                 long_videos += 1
     
     return total_videos, long_videos
 
 def main():
-    categories = [
-        "education", "spiritual", "life coach", 
-        "fitness", "nutrition", "mental health", 
-        "time management", "career coaching", "mindfulness", 
-        "photography", "writing", "music lessons", 
-        "small business", "marketing", "financial planning", 
-        "tech reviews", "cybersecurity", 
-        "cooking", "gardening", "DIY crafts", 
-        "language learning", "travel", "outdoors", 
-        "research", "STEM", "homeschooling", 
-        "history", "culture", "parenting", 
-        "gaming", "esports", "environment", 
-        "legal", "compliance", "pet care"
-    ]
+    # Categories and associated keywords
 
-    channel_limit_per_category = 30
+    keywords = {
+        "education": [
+            "education", "learning", "knowledge", "teaching", "tutoring", "training", "courses", 
+            "classes", "study", "lessons", "homework", "tutorials", "mathematics", "science", 
+            "physics", "chemistry", "biology", "literature", "history", "geography", 
+            "economics", "sociology", "philosophy", "psychology", "anthropology", 
+            "politics", "mathematics", "STEM", "engineering", "electronics", 
+            "robotics", "data science", "research", "homeschooling", 
+            "culture", "parenting", "learning", "STEM"
+        ],
+        "health_fitness_wellness": [
+            "health", "wellness", "medicine", "meditation", "mental health", "fitness", 
+            "nutrition", "exercise", "workout", "yoga", "pilates", "weight loss", 
+            "diet", "healthy eating", "well-being", "sleep", "stress management", 
+            "self-care", "mental fitness", "therapy", "counseling", "self-improvement", 
+            "rehabilitation"
+        ],
+        "spirituality": [
+            "spiritual", "spirituality", "mindfulness", "meditation", "yoga", "holistic", 
+            "self-awareness", "inner peace", "consciousness", "enlightenment", "well-being", 
+            "mental clarity", "emotional balance", "personal growth", "self-realization", 
+            "healing", "energy", "chakra", "soul", "life purpose"
+        ],
+        "career_development": [
+            "life coach", "career coaching", "time management", "productivity", 
+            "professional development", "leadership", "management", "skills training", 
+            "career advice", "job search", "resume building", "interview skills", 
+            "public speaking", "entrepreneurship", "networking"
+        ],
+        "arts_hobbies": [
+            "photography", "writing", "music lessons", "art", "drawing", "painting", 
+            "crafts", "DIY crafts", "handmade", "sculpting", "design", "graphic design", 
+            "interior design", "fashion", "sewing", "knitting", "gardening", 
+            "cooking", "baking", "culinary arts", "food"
+        ],
+        "business_finance": [
+            "small business", "marketing", "financial planning", "finance", 
+            "investing", "personal finance", "money management", "entrepreneurship", 
+            "real estate", "economics", "stock market", "taxes", "accounting", 
+            "business strategy", "business management", "startups", "sales"
+        ],
+        "technology_reviews": [
+            "tech reviews", "cybersecurity", "gadgets", "electronics", 
+            "consumer electronics", "hardware", "device reviews", "product reviews"
+        ],
+        "travel_outdoors": [
+            "travel", "outdoors", "adventure", "hiking", "camping", 
+            "nature", "wildlife", "exploration", "backpacking", "eco-tourism"
+        ],
+        "gaming_esports": [
+            "gaming", "esports", "video games", "gameplay", "streaming", 
+            "gaming culture", "competitive gaming", "gaming news", "game reviews"
+        ],
+        "environment_legal_petcare": [
+            "environment", "sustainability", "conservation", "green living", 
+            "legal", "law", "compliance", "rights", "justice", "pet care", 
+            "pets", "animals", "veterinary", "animal health"
+        ]
+    }
+
+
     total_channels_found = 0
-    overall_channel_limit = 20
 
     # Define the CSV file name
     csv_file = "youtube_channels.csv"
-
-    # Open the CSV file in write mode
-    with open(csv_file, mode='w', newline='', encoding='utf-8') as file:
+    
+    # Open the CSV file in append mode
+    with open(csv_file, mode='a', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
 
-        # Write the header row
-        writer.writerow(["Channel Title", "Channel ID", "Subscribers", "Total Videos", "Videos over 30 mins", "Description", "URL"])
+        # Write the header row only if the file is empty
+        if os.stat(csv_file).st_size == 0:
+            writer.writerow(["Channel Title", "Channel ID", "Subscribers", "Total Videos", "Videos over 30 mins", "Description", "URL"])
 
-        for category in categories:
-            next_page_token = None
-            category_channels_found = 0
-            while category_channels_found < channel_limit_per_category:
-                response = search_channels(category, next_page_token)
-                channel_ids = [item['id']['channelId'] for item in response['items']]
+        next_page_token = None
+        while total_channels_found < OVERALL_CHANNEL_LIMIT:
+            response = search_channels(next_page_token)
+            channel_ids = [item['id']['channelId'] for item in response['items']]
                 
-                channel_details = get_channel_details(channel_ids)
-                
-                for item in channel_details['items']:
-                    channel_id = item['id']
-                    title = item['snippet']['title']
-                    description = item['snippet']['description']
-                    
-                    if channel_id in processed_channels or not is_individual_channel(title, description):
-                        continue
-                    
-                    subscriber_count = int(item['statistics'].get('subscriberCount', 0))
-                    video_count = int(item['statistics'].get('videoCount', 0))
-                    uploads_playlist_id = item['contentDetails']['relatedPlaylists']['uploads']
-                    
-                    if 5000 <= subscriber_count < 100000 and video_count >= 100:
-                        language = item['snippet'].get('defaultLanguage', 'en')
-                        if language == 'en':
-                            total_videos, long_videos = get_video_durations(uploads_playlist_id)
-                            
-                            if total_videos >= 100 and long_videos >= 50:
-                                # Write channel data to the CSV file
-                                writer.writerow([
-                                    title,
-                                    channel_id,
-                                    subscriber_count,
-                                    total_videos,
-                                    long_videos,
-                                    description,
-                                    f"https://www.youtube.com/channel/{channel_id}"
-                                ])
-                                category_channels_found += 1
-                                total_channels_found += 1
-
-                                # Save processed channel ID
-                                processed_channels.add(channel_id)
-                                with open(processed_channels_file, 'a') as f:
-                                    f.write(channel_id + "\n")
-                                
-                                if total_channels_found >= overall_channel_limit:
-                                    break
-                
-                if total_channels_found >= overall_channel_limit or not response.get('nextPageToken'):
-                    break
-                next_page_token = response.get('nextPageToken')
+            channel_details = get_channel_details(channel_ids)
             
-            if total_channels_found >= overall_channel_limit:
+            for item in channel_details['items']:
+                channel_id = item['id']
+                title = item['snippet']['title']
+                description = item['snippet']['description']
+                
+                if channel_id in processed_channels or not is_individual_channel(title, description):
+                    continue
+                
+                for category in keywords:
+                    if matches_category(description, keywords):
+                        subscriber_count = int(item['statistics'].get('subscriberCount', 0))
+                        video_count = int(item['statistics'].get('videoCount', 0))
+                        uploads_playlist_id = item['contentDetails']['relatedPlaylists']['uploads']
+                        
+                        if MIN_SUBSCRIBERS <= subscriber_count < MAX_SUBSCRIBERS and video_count >= MIN_VIDEOS:
+                            language = item['snippet'].get('defaultLanguage', 'en')
+                            if language == 'en':
+                                total_videos, long_videos = get_video_durations(uploads_playlist_id)
+                                
+                                if total_videos >= MIN_VIDEOS and long_videos >= MIN_LONG_VIDEOS:
+                                    # Write channel data to the CSV file
+                                    writer.writerow([
+                                        title,
+                                        channel_id,
+                                        subscriber_count,
+                                        total_videos,
+                                        long_videos,
+                                        description,
+                                        f"https://www.youtube.com/channel/{channel_id}"
+                                    ])
+
+                                    print(f"Added channel: {title} ({channel_id}) with {subscriber_count} subscribers")
+                                    total_channels_found += 1
+
+                                    # Save processed channel ID
+                                    processed_channels.add(channel_id)
+                                    with open(processed_channels_file, 'a') as f:
+                                        f.write(channel_id + "\n")
+                                    
+                                    if total_channels_found >= OVERALL_CHANNEL_LIMIT:
+                                        break
+            
+            if total_channels_found >= OVERALL_CHANNEL_LIMIT or not response.get('nextPageToken'):
                 break
+            next_page_token = response.get('nextPageToken')
+        
+        print(f"Total channels found: {total_channels_found}")
 
 if __name__ == "__main__":
     main()
