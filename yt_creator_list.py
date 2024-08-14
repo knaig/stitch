@@ -3,7 +3,7 @@ import googleapiclient.discovery
 import csv
 
 # Replace with your own API key
-API_KEY = os.getenv("AIzaSyCPDqiAcioF07fhKaPADuy53kuZIgI6o-A")  #This is for livlyfe.in. Change this to YOUTUBE_API_KEY when using karthik.naig@gmail account
+API_KEY = os.getenv("YOUTUBE_API_KEY")  #This is for livlyfe.in. Change this to os.getenv("YOUTUBE_API_KEY") when using karthik.naig@gmail account
 
 # Initialize YouTube API client
 youtube = googleapiclient.discovery.build("youtube", "v3", developerKey=API_KEY)
@@ -23,7 +23,7 @@ MIN_LONG_VIDEOS = 30
 LONG_VIDEO_THRESHOLD_SECONDS = 1800  # 30 minutes
 CHANNEL_BATCH_SIZE = 50
 CHANNEL_LIMIT_PER_CATEGORY = 30
-OVERALL_CHANNEL_LIMIT = 300
+OVERALL_CHANNEL_LIMIT = 1000
 
 # Load processed channel IDs
 if os.path.exists(processed_channels_file):
@@ -33,10 +33,21 @@ else:
     processed_channels = set()
 
 def is_individual_channel(title, description):
+    # Skip channels with empty descriptions
+    if not description:
+        return False
+
+    # Filter out "Topic" channels
+    if "Topic" in title:
+        return False
+
+    # Filter out channels with organization or Islamic-related keywords
     for keyword in organization_keywords + islamic_keywords:
         if keyword.lower() in title.lower() or keyword.lower() in description.lower():
             return False
+
     return True
+
 
 def matches_category(description, keywords):
     description_lower = description.lower()
@@ -227,9 +238,13 @@ def main():
                 channel_id = item['id']
                 title = item['snippet']['title']
                 description = item['snippet']['description']
-                
+
+                print(f"Evaluating channel: {title} ({channel_id})")
+                print(f"Description: {description}")
+
                 if channel_id in processed_channels or not is_individual_channel(title, description):
-                    continue
+                    print(f"Skipping channel: {title} ({channel_id}) due to filter.")
+                    continue                
                 
                 for category in keywords:
                     if matches_category(description, keywords):
