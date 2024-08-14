@@ -2,12 +2,21 @@ import os
 import googleapiclient.discovery
 import csv
 
-
 # Replace with your own API key
 API_KEY = os.getenv("YOUTUBE_API_KEY")
 
 # Initialize YouTube API client
 youtube = googleapiclient.discovery.build("youtube", "v3", developerKey=API_KEY)
+
+# Keywords to filter out organizations and Islamic-related content
+organization_keywords = ["Inc", "Corp", "LLC", "Company", "Organization", "Group", "Institute", "Foundation", "Association", "Official"]
+islamic_keywords = ["Islam", "Muslim", "Quran", "Hadith", "Sharia", "Ummah", "Allah", "Muhammad", "Ramadan", "Hajj"]
+
+def is_individual_channel(title, description):
+    for keyword in organization_keywords + islamic_keywords:
+        if keyword.lower() in title.lower() or keyword.lower() in description.lower():
+            return False
+    return True
 
 def search_channels(query, page_token=None):
     request = youtube.search().list(
@@ -80,9 +89,6 @@ def get_video_durations(uploads_playlist_id):
     
     return total_videos, long_videos
 
-# Define the CSV file name
-csv_file = "youtube_channels.csv"
-
 def main():
     categories = [
         "education", "spiritual", "life coach", 
@@ -123,6 +129,12 @@ def main():
                 channel_details = get_channel_details(channel_ids)
                 
                 for item in channel_details['items']:
+                    title = item['snippet']['title']
+                    description = item['snippet']['description']
+                    
+                    if not is_individual_channel(title, description):
+                        continue
+                    
                     subscriber_count = int(item['statistics'].get('subscriberCount', 0))
                     video_count = int(item['statistics'].get('videoCount', 0))
                     uploads_playlist_id = item['contentDetails']['relatedPlaylists']['uploads']
@@ -135,12 +147,12 @@ def main():
                             if total_videos >= 100 and long_videos >= 50:
                                 # Write channel data to the CSV file
                                 writer.writerow([
-                                    item['snippet']['title'],
+                                    title,
                                     item['id'],
                                     subscriber_count,
                                     total_videos,
                                     long_videos,
-                                    item['snippet']['description'],
+                                    description,
                                     f"https://www.youtube.com/channel/{item['id']}"
                                 ])
                                 category_channels_found += 1
@@ -154,7 +166,6 @@ def main():
             
             if total_channels_found >= overall_channel_limit:
                 break
-
 
 if __name__ == "__main__":
     main()
