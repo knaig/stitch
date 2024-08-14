@@ -3,7 +3,7 @@ import googleapiclient.discovery
 import csv
 
 # Replace with your own API key
-API_KEY = os.getenv("YOUTUBE_API_KEY")  #This is for livlyfe.in. Change this to os.getenv("YOUTUBE_API_KEY") when using karthik.naig@gmail account
+API_KEY = os.getenv("YT_API_KEY_LIVLYFE")  #This is for livlyfe.in. Change this to "YOUTUBE_API_KEY" when using karthik.naig@gmail account
 
 # Initialize YouTube API client
 youtube = googleapiclient.discovery.build("youtube", "v3", developerKey=API_KEY)
@@ -246,39 +246,38 @@ def main():
                     print(f"Skipping channel: {title} ({channel_id}) due to filter.")
                     continue                
                 
-                for category in keywords:
-                    if matches_category(description, keywords):
-                        subscriber_count = int(item['statistics'].get('subscriberCount', 0))
-                        video_count = int(item['statistics'].get('videoCount', 0))
-                        uploads_playlist_id = item['contentDetails']['relatedPlaylists']['uploads']
-                        
-                        if MIN_SUBSCRIBERS <= subscriber_count < MAX_SUBSCRIBERS and video_count >= MIN_VIDEOS:
-                            language = item['snippet'].get('defaultLanguage', 'en')
-                            if language == 'en':
-                                total_videos, long_videos = get_video_durations(uploads_playlist_id)
-                                
-                                if total_videos >= MIN_VIDEOS and long_videos >= MIN_LONG_VIDEOS:
-                                    # Write channel data to the CSV file
-                                    writer.writerow([
-                                        title,
-                                        channel_id,
-                                        subscriber_count,
-                                        total_videos,
-                                        long_videos,
-                                        description,
-                                        f"https://www.youtube.com/channel/{channel_id}"
-                                    ])
+                if matches_category(description, keywords):
+                    subscriber_count = int(item['statistics'].get('subscriberCount', 0))
+                    video_count = int(item['statistics'].get('videoCount', 0))
+                    uploads_playlist_id = item['contentDetails']['relatedPlaylists']['uploads']
+                    
+                    if MIN_SUBSCRIBERS <= subscriber_count < MAX_SUBSCRIBERS and video_count >= MIN_VIDEOS:
+                        language = item['snippet'].get('defaultLanguage', 'en')
+                        if language == 'en':
+                            total_videos, long_videos = get_video_durations(uploads_playlist_id)
+                            
+                            if total_videos >= MIN_VIDEOS and long_videos >= MIN_LONG_VIDEOS:
+                                # Write channel data to the CSV file
+                                writer.writerow([
+                                    title,
+                                    channel_id,
+                                    subscriber_count,
+                                    total_videos,
+                                    long_videos,
+                                    description,
+                                    f"https://www.youtube.com/channel/{channel_id}"
+                                ])
 
-                                    print(f"Added channel: {title} ({channel_id}) with {subscriber_count} subscribers")
-                                    total_channels_found += 1
+                                print(f"Added channel: {title} ({channel_id}) with {subscriber_count} subscribers")
+                                total_channels_found += 1
 
-                                    # Save processed channel ID
-                                    processed_channels.add(channel_id)
-                                    with open(processed_channels_file, 'a') as f:
-                                        f.write(channel_id + "\n")
+                                # Save processed channel ID
+                                processed_channels.add(channel_id)
+                                with open(processed_channels_file, 'a') as f:
+                                    f.write(channel_id + "\n")
                                     
-                                    if total_channels_found >= OVERALL_CHANNEL_LIMIT:
-                                        break
+                                if total_channels_found >= OVERALL_CHANNEL_LIMIT:
+                                    break
             
             if total_channels_found >= OVERALL_CHANNEL_LIMIT or not response.get('nextPageToken'):
                 break
