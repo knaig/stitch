@@ -1,9 +1,9 @@
 {
-  "answer": "{\n  \"id\": 101,\n  \"seek\": 30246,\n  \"start\": 317.58,\n  \"end\": 321.68,\n  \"text\": \" Good thing, Aspen Dental offers affordable, complete care all in one place",
-  "start": 317.58,
+  "answer": "Jesse, just me as a governor",
+  "start": 80.28,
   "documents": [
     {
-      "content": "{\n  \"id\": 101,\n  \"seek\": 30246,\n  \"start\": 317.58,\n  \"end\": 321.68,\n  \"text\": \" Good thing, Aspen Dental offers affordable, complete care all in one place"
+      "content": "Jesse, just me as a governor"
     }
   ]
 }

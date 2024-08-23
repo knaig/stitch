@@ -1,41 +1,41 @@
 {
-  "query": "tell me about aspen dental",
-  "no_ans_gap": 4.170384168624878,
+  "query": "tell me about Biden",
+  "no_ans_gap": 4.430951416492462,
   "answers": [
     {
-      "answer": "{\n  \"id\": 101,\n  \"seek\": 30246,\n  \"start\": 317.58,\n  \"end\": 321.68,\n  \"text\": \" Good thing, Aspen Dental offers affordable, complete care all in one place",
+      "answer": "Jesse, just me as a governor",
       "type": "extractive",
-      "score": 0.15442296862602234,
-      "context": "{\n  \"id\": 101,\n  \"seek\": 30246,\n  \"start\": 317.58,\n  \"end\": 321.68,\n  \"text\": \" Good thing, Aspen Dental offers affordable, complete care all in one place",
+      "score": 0.3063860535621643,
+      "context": " \"seek\": 5672,\n  \"start\": 80.28,\n  \"end\": 84.76,\n  \"text\": \" Jesse, just me as a governor, I've been dealing with Biden on different events that have ",
       "offsets_in_document": [
         {
-          "start": 131,
-          "end": 285
+          "start": 221,
+          "end": 249
         }
       ],
       "offsets_in_context": [
         {
-          "start": 0,
-          "end": 154
+          "start": 61,
+          "end": 89
         }
       ],
       "document_ids": [
-        "7720e788739cfe7d02d938093459dea2"
+        "cdb02674065696794d6c3af00d08162b"
       ],
       "meta": {}
     }
   ],
   "documents": [
     {
-      "content": "    },\n    {\n      \"word\": \" own.\",\n      \"start\": 316.28,\n      \"end\": 316.5,\n      \"probability\": 0.8940435647964478\n    }\n  ]\n}\n{\n  \"id\": 101,\n  \"seek\": 30246,\n  \"start\": 317.58,\n  \"end\": 321.68,\n  \"text\": \" Good thing, Aspen Dental offers affordable, complete care all in one place\",\n  \"tokens\": [\n    50900,\n    2205,\n    551,\n    11,\n    1018,\n    5200,\n    413,\n    14533,\n    7736,\n    12028,\n    11,\n    3566,\n    1127,\n    439,\n    294,\n    472,\n    1081,\n    51160\n  ],\n  \"temperature\": 0.0,\n  \"avg_lo",
+      "content": "92863535881042\n    },\n    {\n      \"word\": \" him.\",\n      \"start\": 79.64,\n      \"end\": 79.84,\n      \"probability\": 0.3684249818325043\n    }\n  ]\n}\n{\n  \"id\": 32,\n  \"seek\": 5672,\n  \"start\": 80.28,\n  \"end\": 84.76,\n  \"text\": \" Jesse, just me as a governor, I've been dealing with Biden on different events that have happened\",\n  \"tokens\": [\n    51542,\n    21895,\n    11,\n    445,\n    385,\n    382,\n    257,\n    12965,\n    11,\n    286,\n    600,\n    668,\n    6260,\n    365,\n    9877,\n    322,\n    819,\n    3931,\n    300,",
       "content_type": "text",
-      "score": 0.6751790810232093,
+      "score": 0.6580922324306707,
       "meta": {},
       "id_hash_keys": [
         "content"
       ],
       "embedding": null,
-      "id": "7720e788739cfe7d02d938093459dea2"
+      "id": "cdb02674065696794d6c3af00d08162b"
     }
   ],
   "root_node": "Query",

@@ -7,7 +7,7 @@ import logging
 
 app = Flask(__name__)
 
-CORS(app, resources={r"/search": {"origins": "*"}, r"/write-content": {"origins": "http://134.209.150.110:3000"}})
+CORS(app, resources={r"/search": {"origins": "*"}, r"/write-content": {"origins": "*"}})
 
 '''
 CORS(app, resources={r"/search": {"origins": "*"}, r"/write-content": {"origins": "*"}})  # Allow all origins for '/search' and '/write-content'
